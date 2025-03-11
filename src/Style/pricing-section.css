@@ -1,0 +1,33 @@
+.slick-dots {
+    bottom: -30px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 8px;
+    color: #ccc;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #ff4b8b;
+  }
+  
+  .slick-slide {
+    padding: 10px;
+  }
+  
+  .slick-track {
+    display: flex !important;
+  }
+  
+  .slick-slide {
+    height: inherit !important;
+    display: flex !important;
+  }
+  
+  .slick-slide > div {
+    display: flex;
+    height: 100%;
+    width: 100%;
+  }
+  
+  
