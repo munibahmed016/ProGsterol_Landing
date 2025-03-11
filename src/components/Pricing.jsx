@@ -35,7 +35,7 @@ const plans = [
     ],
     isPopular: true,
     tag: "HOT DEAL",
-    tagColor: "#FF4B8B",
+    tagColor: "#FF8042",
   },
   {
     title: "BOX 30 SACHETS",

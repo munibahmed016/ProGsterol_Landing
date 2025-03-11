@@ -1,149 +1,100 @@
 "use client"
 
 import { Box, Typography } from "@mui/material"
-import { motion } from "framer-motion"
 
 // Example badges - replace with your actual images & names
 const badges = [
   { logo: "/1-1.png", name: "" },
   { logo: "/2-1.webp", name: "" },
-  { logo: "/3-1.webp", name: "" },
   { logo: "/4-1.webp", name: "" },
   { logo: "/5-1.webp", name: "" },
   { logo: "/6.png", name: "" },
-  { logo: "/7.png", name: "" },
-  { logo: "/8.png", name: "" },
-  { logo: "/9.png", name: "" },
-  { logo: "/10.png", name: "" },
 ]
-
-const scrollVariants = {
-  animate: {
-    x: ["0%", "-100%"],
-    transition: {
-      repeat: Infinity,
-      repeatType: "loop",
-      duration: 40,
-      ease: "linear",
-    },
-  },
-}
 
 export default function CertificatesSection() {
   return (
     <Box
       sx={{
         display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
-        overflow: "hidden",
         width: "100%",
         backgroundColor: "#f9f9ff",
         py: 4,
-        position: "relative",
+        px: 2,
       }}
     >
-      <Box
+      <Typography
+        variant="h4"
+        fontWeight="bold"
         sx={{
-          minWidth: 300,
-          backgroundColor: "#1BB3F7 ",
-          color: "white",
-          textAlign: "left",
-          borderRadius: "8px",
-          py: 2,
-          px: 3,
-          height: "fit-content",
-          ml: { xs: 2, md: 4 },
-          zIndex: 2,
+          width: "100%",
+          textAlign: "center",
+          mb: 3,
+          fontSize: { xs: "1.5rem", md: "2rem" },
+          color: "#071A2B",
         }}
       >
-        <Typography variant="h4" fontWeight="bold" sx={{ fontSize: "1.5rem", lineHeight: 1.3, color: "white" }}>
-          Certificates
-        </Typography>
-        <Typography variant="body2" sx={{ fontSize: "1rem" }}>
-          From Global Regulatory Authorities
-        </Typography>
-      </Box>
+        Certificates
+      </Typography>
 
-      {/* Infinite scroll container for certificates */}
       <Box
         sx={{
-          flex: 1,
-          overflow: "hidden",
-          ml: 2,
-          position: "relative",
+          display: "flex",
+          flexDirection: { xs: "row", md: "row" },
+          flexWrap: { xs: "nowrap", md: "wrap" },
+          overflowX: { xs: "auto", md: "unset" },
+          gap: 3,
+          width: "100%",
+          maxWidth: "800px",
+          justifyContent: "center",
+          px: { xs: 2, md: 0 },
         }}
       >
-        <Box
-          component={motion.div}
-          variants={scrollVariants}
-          animate="animate"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            gap: 3,
-            whiteSpace: "nowrap",
-            minWidth: "fit-content",
-          }}
-        >
-          {/* Duplicate badges for smooth infinite scrolling */}
-          {[...badges, ...badges].map((badge, index) => (
+        {badges.map((badge, index) => (
+          <Box
+            key={index}
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "center",
+              minWidth: { xs: "80px", md: "auto" },
+            }}
+          >
+            {/* Circular border container */}
             <Box
-              key={index}
               sx={{
+                width: 80,
+                height: 80,
+                borderRadius: "50%",
+                border: "2px solid #D0D5DD",
                 display: "flex",
-                flexDirection: "column",
                 alignItems: "center",
                 justifyContent: "center",
-                flexShrink: 0,
-                width: 100,
+                overflow: "hidden",
+                backgroundColor: "#fff",
               }}
             >
-              {/* Circular border container */}
               <Box
+                component="img"
+                src={badge.logo}
+                alt={badge.name}
                 sx={{
-                  width: 80,
-                  height: 80,
-                  borderRadius: "50%",
-                  border: "2px solid #D0D5DD",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  overflow: "hidden",
-                  mb: 1,
-                  backgroundColor: "#fff",
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "contain",
+                  filter: "grayscale(30%)",
+                  transition: "filter 0.3s",
+                  "&:hover": {
+                    filter: "grayscale(0%)",
+                  },
                 }}
-              >
-                <Box
-                  component="img"
-                  src={badge.logo}
-                  alt={badge.name}
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                    filter: "grayscale(30%)",
-                    transition: "filter 0.3s",
-                    "&:hover": {
-                      filter: "grayscale(0%)",
-                    },
-                  }}
-                />
-              </Box>
-              {/* Country/Authority name */}
-              <Typography
-                variant="caption"
-                sx={{
-                  color: "#071A2B",
-                  fontWeight: 500,
-                  fontSize: "0.75rem",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                {badge.name}
-              </Typography>
+              />
             </Box>
-          ))}
-        </Box>
+          </Box>
+        ))}
       </Box>
     </Box>
   )

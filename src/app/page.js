@@ -15,6 +15,9 @@ import RecommendedByDoctors from "@/components/Dcotor"
 import CustomerTestimonials from "@/components/Customers"
 import TestimonialsSection from "@/components/TestimonialsSection."
 import CTAForms from "@/components/CTAForms"
+import ProductInterestCTA from "@/components/ProductInterestCTA"
+import ContactForm from "@/components/ContactForm"
+import HealthExpertCTA from "@/components/HealthExpertCTA"
 
 export default function Home() {
   return (
@@ -28,13 +31,15 @@ export default function Home() {
       <Header />
       <HeroSection />
       <TrustedCompanies />
-      <ProductShowcase />
+      <ProductInterestCTA/>
+      {/* <ProductShowcase /> */}
       <FeaturesSection/>
       {/* <HowItWorks /> */}
-      <RecommendedByDoctors />
+      {/* <RecommendedByDoctors /> */}
       <CustomerTestimonials />
+      <HealthExpertCTA/>
       <TestimonialsSection />
-      <CTAForms />
+      <ContactForm/>
       {/* <FeatureShowcase />  */}
       <PricingSection />
       <FAQSection />
