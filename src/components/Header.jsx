@@ -1,11 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react";
 import {
   AppBar,
   Box,
   Toolbar,
-  Typography,
   Button,
   Container,
   IconButton,
@@ -16,52 +15,56 @@ import {
   ListItemText,
   useMediaQuery,
   useTheme,
-} from "@mui/material"
-import { Menu as MenuIcon } from "@mui/icons-material"
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
+} from "@mui/material";
+import { Menu as MenuIcon, ShoppingCart, Search } from "@mui/icons-material";
+import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "#features" },
-  { name: "How it works", href: "#how-it-works" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "Contact", href: "#contact" },
-]
+  { name: "Supplement", href: "#supplement" },
+  { name: "Gallery", href: "#gallery" },
+  { name: "Order", href: "#order" },
+  { name: "Blog", href: "#blog" },
+  { name: "Contact", href: "#contact", color: "#32CD32" },
+];
 
 export default function Header() {
-  const [mobileOpen, setMobileOpen] = useState(false)
-  const theme = useTheme()
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen)
-  }
+    setMobileOpen(!mobileOpen);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolling(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <AppBar position="sticky" elevation={0} sx={{ bgcolor: "white", color: "text.primary" }}>
+    <AppBar
+      position="fixed"
+      elevation={scrolling ? 4 : 0}
+      sx={{
+        bgcolor: scrolling ? "rgba(255, 255, 255, 0.9)" : "white",
+        color: "text.primary",
+        py: { xs: -2, md: 1 },
+        transition: "background 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
+      }}
+    >
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: "space-between", py: 1 }}>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between", py: { xs: 0.5, md: 1 } }}>
           {/* Logo */}
-          {/* <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              fontWeight: 700,
-              color: "#6366f1",
-              fontSize: { xs: "1.5rem", md: "1.8rem" },
-            }}
-          >
-           
-          </Typography> */}
-
-          <Image
-            src="/3z_bio.svg"
-            alt="logo"
-            width={100}
-            height={100}
-          />
+          <Image src="/3z_bio.svg" alt="logo" width={100} height={40} />
 
           {/* Desktop Navigation */}
           {!isMobile && (
@@ -72,33 +75,58 @@ export default function Header() {
                   component={Link}
                   href={item.href}
                   sx={{
-                    color: "text.primary",
-                    "&:hover": { color: "#6366f1" },
+                    color: item.color || "text.primary",
+                    fontWeight: "bold",
                     fontSize: "0.9rem",
+                    "&:hover": { color: "#32CD32" },
                   }}
                 >
                   {item.name}
                 </Button>
               ))}
+              
+              {/* Icons */}
+              <IconButton sx={{ color: "text.primary" }}>
+                <Search fontSize="small" />
+              </IconButton>
+              <IconButton sx={{ color: "text.primary", position: "relative" }}>
+                <ShoppingCart fontSize="small" />
+                <Box
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    width: 6,
+                    height: 6,
+                    bgcolor: "red",
+                    borderRadius: "50%",
+                  }}
+                />
+              </IconButton>
+
+              {/* Order Now Button */}
               <Button
                 variant="contained"
                 sx={{
-                  bgcolor: "#6366f1",
+                  bgcolor: "#32CD32",
                   color: "white",
                   borderRadius: "50px",
-                  px: 3,
-                  "&:hover": { bgcolor: "#4f46e5" },
+                  px: 2,
+                  py: 0.5,
+                  fontWeight: "bold",
+                  fontSize: "0.8rem",
+                  "&:hover": { bgcolor: "#228B22" },
                 }}
               >
-                GET STARTED
+                ORDER NOW
               </Button>
             </Box>
           )}
 
-          {/* Mobile Menu Icon */}
+          {/* Mobile Menu */}
           {isMobile && (
-            <IconButton edge="end" onClick={handleDrawerToggle}>
-              <MenuIcon />
+            <IconButton edge="end" onClick={handleDrawerToggle} sx={{ color: "text.primary" }}>
+              <MenuIcon fontSize="medium" />
             </IconButton>
           )}
         </Toolbar>
@@ -109,13 +137,13 @@ export default function Header() {
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ "& .MuiDrawer-paper": { width: 240 } }}
+        sx={{ "& .MuiDrawer-paper": { width: 200 } }}
       >
         <List>
           {navItems.map((item) => (
             <ListItem key={item.name} disablePadding>
-              <ListItemButton component={Link} href={item.href}>
-                <ListItemText primary={item.name} />
+              <ListItemButton component={Link} href={item.href} onClick={handleDrawerToggle}>
+                <ListItemText primary={item.name} sx={{ color: item.color || "inherit", textAlign: "center" }} />
               </ListItemButton>
             </ListItem>
           ))}
@@ -124,17 +152,20 @@ export default function Header() {
               fullWidth
               variant="contained"
               sx={{
-                bgcolor: "#6366f1",
+                bgcolor: "#32CD32",
                 color: "white",
                 borderRadius: "50px",
-                "&:hover": { bgcolor: "#4f46e5" },
+                fontWeight: "bold",
+                fontSize: "0.8rem",
+                "&:hover": { bgcolor: "#228B22" },
               }}
+              onClick={handleDrawerToggle}
             >
-              GET STARTED
+              ORDER NOW
             </Button>
           </ListItem>
         </List>
       </Drawer>
     </AppBar>
-  )
+  );
 }

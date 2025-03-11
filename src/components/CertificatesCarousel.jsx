@@ -5,16 +5,16 @@ import { motion } from "framer-motion"
 
 // Example badges - replace with your actual images & names
 const badges = [
-  { logo: "/1-1.png", name: "Estonia" },
-  { logo: "/2-1.webp", name: "Vietnam" },
-  { logo: "/3-1.webp", name: "Philippines" },
-  { logo: "/4-1.webp", name: "Malaysia" },
-  { logo: "/5-1.webp", name: "Togo" },
-  { logo: "/6.png", name: "Tajikistan" },
-  { logo: "/7.png", name: "South Africa" },
-  { logo: "/8.png", name: "Eswatini" },
-  { logo: "/9.png", name: "Kenya" },
-  { logo: "/10.png", name: "Morocco" },
+  { logo: "/1-1.png", name: "" },
+  { logo: "/2-1.webp", name: "" },
+  { logo: "/3-1.webp", name: "" },
+  { logo: "/4-1.webp", name: "" },
+  { logo: "/5-1.webp", name: "" },
+  { logo: "/6.png", name: "" },
+  { logo: "/7.png", name: "" },
+  { logo: "/8.png", name: "" },
+  { logo: "/9.png", name: "" },
+  { logo: "/10.png", name: "" },
 ]
 
 const scrollVariants = {
@@ -42,7 +42,6 @@ export default function CertificatesSection() {
         position: "relative",
       }}
     >
-      {/* Left-side static purple heading bar */}
       <Box
         sx={{
           minWidth: 300,

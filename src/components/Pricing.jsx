@@ -55,7 +55,7 @@ const plans = [
 export default function PricingSection() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
-  const sliderRef = useRef<Slider | null>(null)
+  const sliderRef = useRef(null);
 
   const settings = {
     dots: true,

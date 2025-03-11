@@ -21,7 +21,6 @@ export default function HeroSection() {
 
   return (
     <Box sx={{ py: { xs: 6, md: 12 }, bgcolor: "white", position: "relative", overflow: "hidden" }}>
-      {/* Background Elements */}
       <motion.div
         animate={floatingAnimation.upDown}
         style={{
@@ -37,7 +36,6 @@ export default function HeroSection() {
           zIndex: 0,
         }}
       />
-      
       <motion.div
         animate={floatingAnimation.upDown}
         style={{
@@ -53,7 +51,6 @@ export default function HeroSection() {
           zIndex: 0,
         }}
       />
-      
       <motion.div
         animate={floatingAnimation.upDown}
         style={{
@@ -69,11 +66,8 @@ export default function HeroSection() {
           zIndex: 0,
         }}
       />
-
-      {/* Main Content */}
       <Container maxWidth="lg" sx={{ position: "relative", zIndex: 2 }}>
         <Grid container spacing={4} alignItems="center">
-          {/* Text Section */}
           <Grid item xs={12} md={6}>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
               <Typography
@@ -81,7 +75,7 @@ export default function HeroSection() {
                 sx={{
                   fontSize: { xs: "2rem", md: "3rem" },
                   fontWeight: 800,
-                  lineHeight: 1.2,
+                  lineHeight: 1.5,
                   mb: 2,
                 }}
               >
@@ -98,8 +92,6 @@ export default function HeroSection() {
               <Typography variant="body1" sx={{ mb: 4, fontFamily: "Poppins, sans-serif", color: '#071A2B', fontSize: '1.2rem' }}>
                 Regulate Glucose Levels, Reverse Insulin Resistance & Take Control of Your Well-Being
               </Typography>
-
-              {/* CTA Buttons */}
               <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}>
                 <Button component={Link} href="#download" variant="outlined" startIcon={<LanguageIcon />} sx={{ width: "100%" }}>
                   Website
@@ -108,15 +100,11 @@ export default function HeroSection() {
                   Watch Video
                 </Button>
               </Box>
-
-              {/* Placeholder for additional info */}
               <Typography variant="body2" color="#071A2B">
                 Over 50000 million users trust ProGsterol for their daily health support.
               </Typography>
             </motion.div>
           </Grid>
-
-          {/* Product Image Section */}
           <Grid item xs={12} md={6}>
             <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", height: "100%" }}>
               <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1 }}>

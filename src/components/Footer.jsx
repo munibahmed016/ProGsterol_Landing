@@ -44,11 +44,11 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: "#6366f1",
+        bgcolor: "#0B2A45",
         color: "white",
         pt: { xs: 8, md: 12 },
         pb: 4,
-        background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+        background: "#0B2A45",
       }}
     >
       <Container maxWidth="xl">
