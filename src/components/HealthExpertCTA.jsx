@@ -1,8 +1,8 @@
 "use client"
 
-import { Box, Typography, Button } from "@mui/material"
-import { motion } from "framer-motion"
-import { Phone } from "lucide-react"
+import { Box, Typography, Button, Container } from "@mui/material";
+import { motion } from "framer-motion";
+import { Phone } from "lucide-react";
 
 export default function HealthExpertCTA() {
   return (
@@ -15,40 +15,45 @@ export default function HealthExpertCTA() {
     >
       <Box
         sx={{
-          bgcolor: "#6366f1",
+          bgcolor: "#1E293B", // Darker background for contrast
           borderRadius: 4,
-          p: 4,
-          height: "100%",
+          py: 5,
+          px: { xs: 3, md: 5 },
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "space-between",
+          boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
           color: "white",
         }}
       >
-        <Typography variant="h4" sx={{ mb: 2, fontWeight: 600 }}>
-          Connect with our health expert
-        </Typography>
-        <Typography variant="body1" sx={{ mb: 4, opacity: 0.9 }}>
-          Get personalized advice from our certified health professionals.
-        </Typography>
+        <Box sx={{ textAlign: { xs: "center", md: "left" }, mb: { xs: 3, md: 0 } }}>
+          <Typography variant="h4" sx={{ fontWeight: 600 }}>
+            Connect with our health expert
+          </Typography>
+          <Typography variant="body1" sx={{ opacity: 0.9, mt: 1 }}>
+            Get personalized advice from our certified health professionals.
+          </Typography>
+        </Box>
         <Button
           variant="contained"
           startIcon={<Phone />}
           sx={{
-            bgcolor: "white",
-            color: "#6366f1",
+            bgcolor: "#6366f1",
             borderRadius: "50px",
             py: 1.5,
+            px: 4,
+            fontSize: "1rem",
+            fontWeight: "bold",
+            textTransform: "uppercase",
             "&:hover": {
-              bgcolor: "rgba(255, 255, 255, 0.9)",
+              bgcolor: "#4f46e5",
             },
           }}
         >
-          SCHEDULE A CALL
+          Schedule a Call
         </Button>
       </Box>
     </motion.div>
-  )
+  );
 }
-
-
