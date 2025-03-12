@@ -53,7 +53,7 @@ export default function Footer() {
     >
       <Container maxWidth="xl">
         {/* Newsletter Section */}
-        <Box
+        {/* <Box
           component={motion.div}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function Footer() {
               )}
             </Grid>
           </Grid>
-        </Box>
+        </Box> */}
 
         {/* Main Footer Content */}
         <Grid container spacing={6}>

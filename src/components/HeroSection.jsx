@@ -94,8 +94,14 @@ export default function HeroSection() {
                 Regulate Glucose Levels, Reverse Insulin Resistance & Take Control of Your Well-Being
               </Typography>
               <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}>
-                <Button component={Link} href="#download" variant="outlined" startIcon={<LanguageIcon />} sx={{ width: "100%" }}>
-                  Website
+                <Button
+                  component={Link} // Use Next.js Link
+                  href="https://3zbio.pk/product/progsterol-new-dietary-supplement-to-support-healthy-glucose-level/" // Anchor link
+                  variant="outlined"
+                  startIcon={<LanguageIcon />}
+                  sx={{ width: "100%" }}
+                >
+                  Buy Now
                 </Button>
                 <Button component={Link} href="#download" variant="outlined" startIcon={<Play />} sx={{ width: "100%" }}>
                   Watch Video
@@ -104,7 +110,7 @@ export default function HeroSection() {
               <Typography variant="body1" color="#071A2B">
                 Over 50k users trust ProGsterol for their daily health support.
               </Typography>
-              <CertificatesSection/>
+              <CertificatesSection />
             </motion.div>
           </Grid>
           <Grid item xs={12} md={6}>
