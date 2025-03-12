@@ -7,6 +7,7 @@ import { Play } from "lucide-react"
 import LanguageIcon from '@mui/icons-material/Language'
 import Image from "next/image"
 import productImage from "../../public/prog.webp"
+import CertificatesSection from "./CertificatesCarousel"
 
 const floatingAnimation = {
   upDown: {
@@ -100,9 +101,10 @@ export default function HeroSection() {
                   Watch Video
                 </Button>
               </Box>
-              <Typography variant="body2" color="#071A2B">
-                Over 50000 million users trust ProGsterol for their daily health support.
+              <Typography variant="body1" color="#071A2B">
+                Over 50k users trust ProGsterol for their daily health support.
               </Typography>
+              <CertificatesSection/>
             </motion.div>
           </Grid>
           <Grid item xs={12} md={6}>

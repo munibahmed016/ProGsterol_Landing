@@ -5,12 +5,11 @@ import { Box, Typography, TextField, Button, Container } from "@mui/material";
 import { motion } from "framer-motion";
 
 export default function ContactForm() {
-  const [messageForm, setMessageForm] = useState({ email: "", message: "" });
+  const [messageForm, setMessageForm] = useState({ email: "", number: "", name: "" });
   const [formStatus, setFormStatus] = useState("");
 
   const handleMessageSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
     setFormStatus("Message sent successfully!");
     setMessageForm({ email: "", message: "" });
   };
@@ -26,7 +25,7 @@ export default function ContactForm() {
       <Container maxWidth="sm">
         <Box
           sx={{
-            bgcolor: "#1E293B", // Darker background for contrast
+            bgcolor: "#1E293B",
             borderRadius: 4,
             p: { xs: 3, md: 5 },
             textAlign: "center",
@@ -34,11 +33,25 @@ export default function ContactForm() {
             boxShadow: "0 4px 20px rgba(0,0,0,0.1)",
           }}
         >
-          <Typography variant="h4" sx={{ mb: 4, fontWeight: 600 }}>
-            Send Your Message
+          <Typography variant="h6" sx={{ mb: 4, fontWeight: 600 }}>
+            Get an expert opinion about your health, please fill the form below
+            Our health expert will contact you shortly.
           </Typography>
           <Box component="form" onSubmit={handleMessageSubmit}>
             <TextField
+              fullWidth
+              placeholder="Your Name"
+              value={messageForm.name}
+              onChange={(e) => setMessageForm({ ...messageForm, email: e.target.value })}
+              sx={{
+                mb: 2,
+                "& .MuiInputBase-root": {
+                  bgcolor: "white",
+                  borderRadius: 2,
+                },
+              }}
+            />
+            {/* <TextField
               fullWidth
               placeholder="Your E-mail"
               value={messageForm.email}
@@ -50,13 +63,13 @@ export default function ContactForm() {
                   borderRadius: 2,
                 },
               }}
-            />
+            /> */}
             <TextField
               fullWidth
               multiline
-              rows={4}
-              placeholder="Your Message"
-              value={messageForm.message}
+              rows={1}
+              placeholder="Enter your phone Number"
+              value={messageForm.number}
               onChange={(e) => setMessageForm({ ...messageForm, message: e.target.value })}
               sx={{
                 mb: 3,

@@ -20,23 +20,22 @@ export default function CertificatesSection() {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
-        backgroundColor: "#f9f9ff",
         py: 4,
         px: 2,
       }}
     >
       <Typography
-        variant="h4"
-        fontWeight="bold"
+        variant="body1"
+        fontWeight="500"
         sx={{
           width: "100%",
           textAlign: "center",
           mb: 3,
-          fontSize: { xs: "1.5rem", md: "2rem" },
+          fontSize: { xs: "1.5rem", md: "1.5rem" },
           color: "#071A2B",
         }}
       >
-        Certificates
+        WE ARE BACKED BY SCIENCE
       </Typography>
 
       <Box

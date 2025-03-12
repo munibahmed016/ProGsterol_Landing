@@ -43,7 +43,7 @@ export default function TestimonialsSection() {
     <Box
       sx={{
         py: { xs: 8, md: 12 },
-        bgcolor: "#f9f9ff",
+        bgcolor: "#FFFFFF",
       }}
     >
       <Container maxWidth="xl">

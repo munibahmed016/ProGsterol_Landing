@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState, useEffect } from "react";
 import {
@@ -57,14 +57,16 @@ export default function Header() {
       sx={{
         bgcolor: scrolling ? "rgba(255, 255, 255, 0.9)" : "white",
         color: "text.primary",
-        py: { xs: -2, md: 1 },
+        py: { xs: 1, md: 1 },
         transition: "background 0.3s ease-in-out, box-shadow 0.3s ease-in-out",
       }}
     >
       <Container maxWidth="lg">
-        <Toolbar disableGutters sx={{ justifyContent: "space-between", py: { xs: 0.5, md: 1 } }}>
+        <Toolbar disableGutters sx={{ justifyContent: "space-between", py: { xs: 0, md: 1 } }}>
           {/* Logo */}
-          <Image src="/3z_bio.svg" alt="logo" width={100} height={40} />
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Image src="/logo.png" alt="logo" width={80} height={40} style={{ maxWidth: "90%", height: "auto" }} />
+          </Box>
 
           {/* Desktop Navigation */}
           {!isMobile && (
@@ -84,7 +86,7 @@ export default function Header() {
                   {item.name}
                 </Button>
               ))}
-              
+
               {/* Icons */}
               <IconButton sx={{ color: "text.primary" }}>
                 <Search fontSize="small" />
@@ -137,13 +139,21 @@ export default function Header() {
         anchor="right"
         open={mobileOpen}
         onClose={handleDrawerToggle}
-        sx={{ "& .MuiDrawer-paper": { width: 200 } }}
+        sx={{
+          "& .MuiDrawer-paper": {
+            width: "80vw",
+            maxWidth: "300px",
+            bgcolor: "white",
+            color: "text.primary",
+            padding: "10px 0",
+          },
+        }}
       >
-        <List>
+        <List sx={{ textAlign: "center" }}>
           {navItems.map((item) => (
             <ListItem key={item.name} disablePadding>
               <ListItemButton component={Link} href={item.href} onClick={handleDrawerToggle}>
-                <ListItemText primary={item.name} sx={{ color: item.color || "inherit", textAlign: "center" }} />
+                <ListItemText primary={item.name} sx={{ color: item.color || "inherit" }} />
               </ListItemButton>
             </ListItem>
           ))}

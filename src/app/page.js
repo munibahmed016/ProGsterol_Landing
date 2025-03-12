@@ -36,7 +36,7 @@ export default function Home() {
       <FeaturesSection/>
       {/* <HowItWorks /> */}
       {/* <RecommendedByDoctors /> */}
-      <CustomerTestimonials />
+      {/* <CustomerTestimonials /> */}
       <HealthExpertCTA/>
       <TestimonialsSection />
       <ContactForm/>

@@ -15,7 +15,7 @@ export default function HealthExpertCTA() {
     >
       <Box
         sx={{
-          bgcolor: "#1E293B", // Darker background for contrast
+          bgcolor: "#1E293B",
           borderRadius: 4,
           py: 5,
           px: { xs: 3, md: 5 },
@@ -29,7 +29,7 @@ export default function HealthExpertCTA() {
       >
         <Box sx={{ textAlign: { xs: "center", md: "left" }, mb: { xs: 3, md: 0 } }}>
           <Typography variant="h4" sx={{ fontWeight: 600 }}>
-            Connect with our health expert
+          Consult our Health Expert Today
           </Typography>
           <Typography variant="body1" sx={{ opacity: 0.9, mt: 1 }}>
             Get personalized advice from our certified health professionals.

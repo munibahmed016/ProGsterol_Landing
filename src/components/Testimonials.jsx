@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { Box, Typography } from "@mui/material"
-import { motion } from "framer-motion"
-import { useInView } from "react-intersection-observer"
-import { ArrowRight } from "lucide-react"
-import Image from "next/image"
+import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 const testimonials = [
   {
@@ -25,8 +25,7 @@ const testimonials = [
     image: "/placeholder.svg?height=120&width=120",
     name: "Ali Nawaz",
     title: "",
-    quote:
-      "",
+    quote: "",
     logo: "/placeholder.svg?height=30&width=80",
     bgColor: "#FFFFFF",
   },
@@ -74,13 +73,13 @@ const testimonials = [
     logo: "/placeholder.svg?height=30&width=80",
     bgColor: "#FFFFFF",
   },
-]
+];
 
 const TestimonialCard = ({ number, subtitle, image, name, title, quote, logo, bgColor = "#FFFFFF", hasArrow }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  })
+  });
 
   return (
     <motion.div
@@ -196,12 +195,26 @@ const TestimonialCard = ({ number, subtitle, image, name, title, quote, logo, bg
         )}
       </Box>
     </motion.div>
-  )
-}
+  );
+};
 
 export default function TestimonialsGrid() {
   return (
-    <Box>
+    <Box sx={{ textAlign: "center", py: { xs: 5, md: 8 } }}>
+      {/* Section Heading */}
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "bold",
+          fontSize: { xs: "1.8rem", md: "2.5rem" },
+          mb: { xs: 3, md: 5 },
+          color: "text.primary",
+        }}
+      >
+        Success Stories of ProGsterol
+      </Typography>
+
+      {/* Testimonials Grid */}
       <Box
         sx={{
           display: "grid",
@@ -229,6 +242,5 @@ export default function TestimonialsGrid() {
         ))}
       </Box>
     </Box>
-  )
+  );
 }
-

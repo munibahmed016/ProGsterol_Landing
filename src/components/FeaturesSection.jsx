@@ -57,7 +57,7 @@ export default function FeatureSection() {
         <Box
             sx={{
                 py: { xs: 8, md: 12 },
-                bgcolor: "#F9F9FF",
+                bgcolor: "white",
                 overflow: "hidden",
             }}
         >
