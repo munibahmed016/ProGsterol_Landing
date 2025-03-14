@@ -69,7 +69,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name }) {
                                 top: 0,
                                 left: 0,
                                 width: "100%",
-                                height: "100%",
+                                height: "115%",
                             }}
                         >
                             <Image
@@ -121,7 +121,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name }) {
                     <Box
                         sx={{
                             position: "relative",
-                            width: "100%",
+                            width: "80%",
                             maxWidth: 900,
                             bgcolor: "background.paper",
                             borderRadius: 2,

@@ -31,10 +31,12 @@ export default function VideoTestimonialCard({
         sx={{
           bgcolor: bgColor,
           borderRadius: "24px",
-          p: 4,
+          p: { xs: 3, md: 4 },
           height: "100%",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: image && quote ? "row" : "column",
+          alignItems: image && quote ? "center" : "flex-start",
+          gap: image && quote ? 4 : 0,
           position: "relative",
           transition: "all 0.3s ease-in-out",
           "&:hover": {
@@ -44,14 +46,15 @@ export default function VideoTestimonialCard({
         }}
       >
         {number && (
-          <Box sx={{ mb: 2 }}>
+          <Box sx={{ mb: 2, flex: 1 }}>
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: "2.5rem", md: "3rem" },
-                fontWeight: 600,
-                lineHeight: 1.2,
+                fontSize: { xs: "2.5rem", md: "3.5rem" },
+                fontWeight: 700,
+                lineHeight: 1,
                 color: "text.primary",
+                mb: 2,
               }}
             >
               {number}
@@ -60,23 +63,43 @@ export default function VideoTestimonialCard({
               variant="body1"
               sx={{
                 color: "text.secondary",
-                mt: 1,
                 fontSize: "1rem",
                 lineHeight: 1.5,
               }}
             >
               {subtitle}
             </Typography>
+            {logo && (
+              <Box
+                sx={{
+                  mt: 3,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    height: 30,
+                    width: 100,
+                  }}
+                >
+                  <Image src={logo || "/placeholder.svg"} alt="Company logo" fill style={{ objectFit: "contain" }} />
+                </Box>
+                {hasArrow && <ArrowRight size={24} className="text-gray-400" />}
+              </Box>
+            )}
           </Box>
         )}
 
         {image && (
-          <Box sx={{ mb: 3, cursor: video ? "pointer" : "default" }} onClick={handleVideoOpen}>
+          <Box sx={{ cursor: video ? "pointer" : "default" }} onClick={handleVideoOpen}>
             <Box
               sx={{
-                width: video ? 90 : 80,
-                height: video ? 90 : 80,
-                borderRadius: video ? "12px" : "50%",
+                width: 120,
+                height: 120,
+                borderRadius: "12px",
                 overflow: "hidden",
                 position: "relative",
               }}
@@ -119,50 +142,52 @@ export default function VideoTestimonialCard({
           </Box>
         )}
 
-        {quote && (
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: "1.125rem",
-              lineHeight: 1.6,
-              mb: 3,
-              flex: 1,
-            }}
-          >
-            {quote}
-          </Typography>
-        )}
+        {(quote || name) && (
+          <Box sx={{ flex: 1 }}>
+            {quote && (
+              <Typography
+                variant="body1"
+                sx={{
+                  fontSize: "1.125rem",
+                  lineHeight: 1.6,
+                  mb: 2,
+                }}
+              >
+                {quote}
+              </Typography>
+            )}
 
-        {name && (
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-              {name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {title}
-            </Typography>
-          </Box>
-        )}
+            {name && (
+              <Box sx={{ mb: logo ? 3 : 0 }}>
+                <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
+                  {name}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {title}
+                </Typography>
+              </Box>
+            )}
 
-        {logo && (
-          <Box
-            sx={{
-              mt: "auto",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                height: 30,
-                width: 100,
-              }}
-            >
-              <Image src={logo || "/placeholder.svg"} alt="Company logo" fill style={{ objectFit: "contain" }} />
-            </Box>
-            {hasArrow && <ArrowRight size={24} className="text-gray-400" />}
+            {logo && !number && (
+              <Box
+                sx={{
+                  mt: "auto",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Box
+                  sx={{
+                    position: "relative",
+                    height: 30,
+                    width: 100,
+                  }}
+                >
+                  <Image src={logo || "/placeholder.svg"} alt="Company logo" fill style={{ objectFit: "contain" }} />
+                </Box>
+              </Box>
+            )}
           </Box>
         )}
       </Box>

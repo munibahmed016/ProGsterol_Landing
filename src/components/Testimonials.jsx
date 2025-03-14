@@ -1,22 +1,20 @@
 "use client"
 
-import { Box, Container, Typography } from "@mui/material"
+import { Box, Container } from "@mui/material"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import VideoTestimonialCard from "./VideoTestimonialCard"
 
 const testimonials = [
   {
-    number: "85%",
-    subtitle: "increase in customer satisfaction",
-    logo: "/placeholder.svg?height=30&width=100",
+    number: "44",
+    subtitle: "new articles published in record time [5/week]",
     bgColor: "#FFF5F1",
     hasArrow: true,
   },
   {
-    number: "15,000+",
-    subtitle: "active daily users",
-    logo: "/placeholder.svg?height=30&width=120",
+    number: "10,000+",
+    subtitle: "hours saved",
     bgColor: "#F1F7FF",
     hasArrow: true,
   },
@@ -24,6 +22,7 @@ const testimonials = [
     image: "/kamran.png",
     video: "/kamran.mp4",
     name: "Kamran Hussain",
+    quote:"lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     title: "Diabetic Patient",
     bgColor: "#FFFFFF",
   },
@@ -31,30 +30,31 @@ const testimonials = [
     image: "/farooq.png",
     video: "/farooq.mp4",
     name: "Farooq Ahmed",
+    quote:"lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     title: "Weight Loss",
     bgColor: "#FFFFFF",
   },
   {
-    number: "5,000+",
-    subtitle: "hours saved in workflow optimization",
+    number: "3,000+",
+    subtitle: "hours saved in content creation time",
     bgColor: "#F8F1FF",
     hasArrow: true,
   },
   {
-    number: "300%",
-    subtitle: "increase in team productivity",
+    number: "800%",
+    subtitle: "surge in web traffic",
     bgColor: "#FFF1F1",
     hasArrow: true,
   },
   {
-    number: "60%",
-    subtitle: "reduction in response time",
+    number: "40%",
+    subtitle: "increase in traffic using Jasper to produce better blog content",
     bgColor: "#F1F7FF",
     hasArrow: true,
   },
   {
-    number: "95%",
-    subtitle: "customer retention rate",
+    number: "93%",
+    subtitle: "faster creation of campaigns",
     bgColor: "#F1FFE9",
     hasArrow: true,
   },
@@ -62,8 +62,8 @@ const testimonials = [
     image: "/amin.png",
     video: "/Review.mp4",
     name: "Muhammad Amin",
+    quote:"lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     title: "Diabetic Patient",
-    quote: "This platform has been a game-changer for our business. The ROI has exceeded all expectations.",
     bgColor: "#FFFFFF",
   },
 ]
@@ -88,25 +88,6 @@ export default function TestimonialsGrid() {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.6 }}
         >
-          <Typography
-            variant="h2"
-            align="center"
-            sx={{
-              fontSize: { xs: "2rem", md: "2.5rem" },
-              fontWeight: 700,
-              mb: 2,
-            }}
-          >
-            Success Stories from Our{" "}
-            <Box component="span" sx={{ color: "#6366f1" }}>
-              Customers
-            </Box>
-          </Typography>
-
-          <Typography variant="body1" align="center" color="text.secondary" sx={{ mb: 8, maxWidth: 600, mx: "auto" }}>
-            Discover how our platform has helped businesses transform their operations and achieve remarkable results.
-          </Typography>
-
           <Box
             sx={{
               display: "grid",
@@ -129,8 +110,8 @@ export default function TestimonialsGrid() {
                   sx={{
                     gridColumn: {
                       xs: "span 1",
-                      sm: index === 2 ? "span 2" : "span 1",
-                      md: index === 2 ? "span 1" : "span 1",
+                      sm: testimonial.quote ? "span 2" : "span 1",
+                      md: testimonial.quote ? "span 2" : "span 1",
                     },
                   }}
                 >
