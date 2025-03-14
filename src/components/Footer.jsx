@@ -46,7 +46,6 @@ export default function Footer() {
       sx={{
         bgcolor: "#0B2A45",
         color: "white",
-        pt: { xs: 8, md: 12 },
         pb: 4,
         background: "#0B2A45",
       }}
@@ -116,107 +115,7 @@ export default function Footer() {
         </Box> */}
 
         {/* Main Footer Content */}
-        <Grid container spacing={6}>
-          {/* Logo and Contact */}
-          <Grid item xs={12} md={4}>
-            <Box sx={{ mb: 3 }}>
-              <Typography
-                variant="h6"
-                sx={{
-                  fontWeight: 700,
-                  display: "flex",
-                  alignItems: "center",
-                  fontSize: "1.5rem",
-                }}
-              >
-                <Box component="span" sx={{ mr: 1, fontSize: "1.8rem" }}>
-                  Z
-                </Box>
-                3ZBIO
-              </Typography>
-            </Box>
-            <Box sx={{ mb: 3, display: "flex", alignItems: "center", gap: 1 }}>
-              <Mail size={20} />
-              <Typography>support@example.com</Typography>
-            </Box>
-            <Box sx={{ mb: 4, display: "flex", alignItems: "center", gap: 1 }}>
-              <Phone size={20} />
-              <Typography>+1-900-123 4567</Typography>
-            </Box>
-            <Box sx={{ display: "flex", gap: 2 }}>
-              {socialLinks.map((social, index) => (
-                <IconButton
-                  key={index}
-                  component={Link}
-                  href={social.href}
-                  sx={{
-                    color: "white",
-                    bgcolor: "rgba(255, 255, 255, 0.1)",
-                    "&:hover": {
-                      bgcolor: "rgba(255, 255, 255, 0.2)",
-                    },
-                  }}
-                >
-                  <social.icon size={20} />
-                </IconButton>
-              ))}
-            </Box>
-          </Grid>
-
-          {/* Footer Links */}
-          {Object.entries(footerLinks).map(([title, links]) => (
-            <Grid item xs={6} md={3} key={title}>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 3 }}>
-                {title}
-              </Typography>
-              <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                {links.map((link) => (
-                  <Link
-                    key={link.name}
-                    href={link.href}
-                    sx={{
-                      color: "white",
-                      opacity: 0.8,
-                      textDecoration: "none",
-                      "&:hover": {
-                        opacity: 1,
-                      },
-                    }}
-                  >
-                    {link.name}
-                  </Link>
-                ))}
-              </Box>
-            </Grid>
-          ))}
-
-          {/* App Store Buttons */}
-          {/* <Grid item xs={12} md={2}>
-            <Typography variant="h6" sx={{ fontWeight: 600, mb: 3 }}>
-              Let&apos;s Try Out
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <Link href="#" sx={{ display: "block" }}>
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hFZPb2az50TMWUH4DujIGx1GprNhxf.png"
-                  alt="App Store"
-                  width={150}
-                  height={50}
-                  style={{ width: "auto", height: "auto" }}
-                />
-              </Link>
-              <Link href="#" sx={{ display: "block" }}>
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-hFZPb2az50TMWUH4DujIGx1GprNhxf.png"
-                  alt="Google Play"
-                  width={150}
-                  height={50}
-                  style={{ width: "auto", height: "auto" }}
-                />
-              </Link>
-            </Box>
-          </Grid> */}
-        </Grid>
+        {/*  */}
 
         {/* Copyright */}
         <Box

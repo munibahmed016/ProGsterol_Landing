@@ -1,246 +1,147 @@
-"use client";
+"use client"
 
-import { Box, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
+import { Box, Container, Typography } from "@mui/material"
+import { motion } from "framer-motion"
+import { useInView } from "react-intersection-observer"
+import VideoTestimonialCard from "./VideoTestimonialCard"
 
 const testimonials = [
   {
-    number: "0",
-    subtitle: "",
+    number: "85%",
+    subtitle: "increase in customer satisfaction",
     logo: "/placeholder.svg?height=30&width=100",
     bgColor: "#FFF5F1",
     hasArrow: true,
   },
   {
-    number: "0",
-    subtitle: "",
+    number: "15,000+",
+    subtitle: "active daily users",
     logo: "/placeholder.svg?height=30&width=120",
     bgColor: "#F1F7FF",
     hasArrow: true,
   },
   {
-    image: "/placeholder.svg?height=120&width=120",
-    name: "Ali Nawaz",
-    title: "",
-    quote: "",
-    logo: "/placeholder.svg?height=30&width=80",
+    image: "/kamran.png",
+    video: "/kamran.mp4",
+    name: "Kamran Hussain",
+    title: "Diabetic Patient",
     bgColor: "#FFFFFF",
   },
   {
-    image: "/placeholder.svg?height=120&width=120",
+    image: "/farooq.png",
+    video: "/farooq.mp4",
     name: "Farooq Ahmed",
-    title: "",
-    quote: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    title: "Weight Loss",
     bgColor: "#FFFFFF",
   },
   {
-    number: "0",
-    subtitle: "",
-    logo: "/placeholder.svg?height=30&width=80",
+    number: "5,000+",
+    subtitle: "hours saved in workflow optimization",
     bgColor: "#F8F1FF",
     hasArrow: true,
   },
   {
-    number: "0",
-    subtitle: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    number: "300%",
+    subtitle: "increase in team productivity",
     bgColor: "#FFF1F1",
     hasArrow: true,
   },
   {
-    number: "0",
-    subtitle: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    number: "60%",
+    subtitle: "reduction in response time",
     bgColor: "#F1F7FF",
     hasArrow: true,
   },
   {
-    number: "0",
-    subtitle: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    number: "95%",
+    subtitle: "customer retention rate",
     bgColor: "#F1FFE9",
     hasArrow: true,
   },
   {
-    image: "/placeholder.svg?height=120&width=120",
-    name: "Kamran Hussain",
-    title: "",
-    quote: "",
-    logo: "/placeholder.svg?height=30&width=80",
+    image: "/amin.png",
+    video: "/Review.mp4",
+    name: "Muhammad Amin",
+    title: "Diabetic Patient",
+    quote: "This platform has been a game-changer for our business. The ROI has exceeded all expectations.",
     bgColor: "#FFFFFF",
   },
-];
+]
 
-const TestimonialCard = ({ number, subtitle, image, name, title, quote, logo, bgColor = "#FFFFFF", hasArrow }) => {
+export default function TestimonialsGrid() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,
-  });
+  })
 
   return (
-    <motion.div
+    <Box
       ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-      transition={{ duration: 0.6 }}
-      className="h-full"
+      sx={{
+        py: { xs: 8, md: 12 },
+        bgcolor: "#f9f9ff",
+      }}
     >
-      <Box
-        sx={{
-          bgcolor: bgColor,
-          borderRadius: "24px",
-          p: 4,
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          position: "relative",
-          transition: "transform 0.2s ease-in-out",
-          "&:hover": {
-            transform: "translateY(-8px)",
-          },
-        }}
-      >
-        {number && (
-          <Box sx={{ mb: 2 }}>
-            <Typography
-              variant="h2"
-              sx={{
-                fontSize: { xs: "2.5rem", md: "3rem" },
-                fontWeight: 600,
-                lineHeight: 1.2,
-                color: "text.primary",
-              }}
-            >
-              {number}
-            </Typography>
-            <Typography
-              variant="body1"
-              sx={{
-                color: "text.secondary",
-                mt: 1,
-                fontSize: "1rem",
-                lineHeight: 1.5,
-              }}
-            >
-              {subtitle}
-            </Typography>
-          </Box>
-        )}
-
-        {image && (
-          <Box sx={{ mb: 3 }}>
-            <Box
-              sx={{
-                width: 80,
-                height: 80,
-                borderRadius: "50%",
-                overflow: "hidden",
-                position: "relative",
-              }}
-            >
-              <Image src={image || "/placeholder.svg"} alt={name || ""} fill style={{ objectFit: "cover" }} />
-            </Box>
-          </Box>
-        )}
-
-        {quote && (
+      <Container maxWidth="xl">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
           <Typography
-            variant="body1"
+            variant="h2"
+            align="center"
             sx={{
-              fontSize: "1.125rem",
-              lineHeight: 1.6,
-              mb: 3,
-              flex: 1,
+              fontSize: { xs: "2rem", md: "2.5rem" },
+              fontWeight: 700,
+              mb: 2,
             }}
           >
-            {quote}
-          </Typography>
-        )}
-
-        {name && (
-          <Box sx={{ mb: 2 }}>
-            <Typography variant="subtitle1" sx={{ fontWeight: 600 }}>
-              {name}
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              {title}
-            </Typography>
-          </Box>
-        )}
-
-        {logo && (
-          <Box
-            sx={{
-              mt: "auto",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <Box
-              sx={{
-                position: "relative",
-                height: 30,
-                width: 100,
-              }}
-            >
-              <Image src={logo || "/placeholder.svg"} alt="Company logo" fill style={{ objectFit: "contain" }} />
+            Success Stories from Our{" "}
+            <Box component="span" sx={{ color: "#6366f1" }}>
+              Customers
             </Box>
-            {hasArrow && <ArrowRight size={24} className="text-gray-400" />}
-          </Box>
-        )}
-      </Box>
-    </motion.div>
-  );
-};
+          </Typography>
 
-export default function TestimonialsGrid() {
-  return (
-    <Box sx={{ textAlign: "center", py: { xs: 5, md: 8 } }}>
-      {/* Section Heading */}
-      <Typography
-        variant="h3"
-        sx={{
-          fontWeight: "bold",
-          fontSize: { xs: "1.8rem", md: "2.5rem" },
-          mb: { xs: 3, md: 5 },
-          color: "text.primary",
-        }}
-      >
-        Success Stories of ProGsterol
-      </Typography>
+          <Typography variant="body1" align="center" color="text.secondary" sx={{ mb: 8, maxWidth: 600, mx: "auto" }}>
+            Discover how our platform has helped businesses transform their operations and achieve remarkable results.
+          </Typography>
 
-      {/* Testimonials Grid */}
-      <Box
-        sx={{
-          display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
-          },
-          gap: 3,
-        }}
-      >
-        {testimonials.map((testimonial, index) => (
           <Box
-            key={index}
             sx={{
-              gridColumn: {
-                xs: "span 1",
-                sm: index === 2 ? "span 2" : "span 1",
-                md: index === 2 ? "span 1" : "span 1",
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                sm: "repeat(2, 1fr)",
+                md: "repeat(3, 1fr)",
               },
+              gap: 3,
             }}
           >
-            <TestimonialCard {...testimonial} />
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+              >
+                <Box
+                  sx={{
+                    gridColumn: {
+                      xs: "span 1",
+                      sm: index === 2 ? "span 2" : "span 1",
+                      md: index === 2 ? "span 1" : "span 1",
+                    },
+                  }}
+                >
+                  <VideoTestimonialCard {...testimonial} />
+                </Box>
+              </motion.div>
+            ))}
           </Box>
-        ))}
-      </Box>
+        </motion.div>
+      </Container>
     </Box>
-  );
+  )
 }
+

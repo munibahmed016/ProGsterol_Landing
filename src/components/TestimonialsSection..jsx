@@ -8,28 +8,28 @@ import TestimonialsGrid from "./Testimonials"
 
 const videoTestimonials = [
   {
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    videoSrc: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4", // Sample video URL
-    name: "Kamran Hussain",
-    title: "Diabetic Patient",
-    company: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    thumbnail: "/Dr_sitwat.png",
+    videoSrc: "/Dr-Sitwat.mp4",
+    // name: "Kamran Hussain",
+    // title: "Diabetic Patient",
+    // company: "",
+    // logo: "/placeholder.svg?height=30&width=100",
   },
   {
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    videoSrc: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4", // Sample video URL
-    name: "Farooq Ahmed",
-    title: "Weight Loss Patient",
-    company: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    thumbnail: "/Mehak.png",
+    videoSrc: "/Mehak.mp4", // Sample video URL
+    // name: "Farooq Ahmed",
+    // title: "Weight Loss Patient",
+    // company: "",
+    // logo: "/placeholder.svg?height=30&width=100",
   },
   {
-    thumbnail: "/placeholder.svg?height=300&width=500",
-    videoSrc: "https://sample-videos.com/video123/mp4/720/big_buck_bunny_720p_1mb.mp4", // Sample video URL
-    name: "Mohammad Amin",
-    title: "Diabetic Patient",
-    company: "",
-    logo: "/placeholder.svg?height=30&width=100",
+    thumbnail: "/nehriza.png",
+    videoSrc: "/Dr-Nehriza.mp4", // Sample video URL
+    // name: "Mohammad Amin",
+    // title: "Diabetic Patient",
+    // company: "",
+    // logo: "/placeholder.svg?height=30&width=100",
   },
 ]
 
@@ -62,9 +62,9 @@ export default function TestimonialsSection() {
               mb: 2,
             }}
           >
-            Success Story of our{" "}
+            Endorsement by {" "}
             <Box component="span" sx={{ color: "#6366f1" }}>
-              customers
+             Experts
             </Box>
           </Typography>
 

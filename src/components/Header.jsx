@@ -16,9 +16,10 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import { Menu as MenuIcon, ShoppingCart, Search } from "@mui/icons-material";
+import { Menu as MenuIcon, ShoppingCart, Search, FacebookOutlined } from "@mui/icons-material";
 import Link from "next/link";
 import Image from "next/image";
+import { Facebook, Twitter, Instagram, Linkedin, Send, Mail, Phone, InstagramIcon } from "lucide-react"
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -28,6 +29,14 @@ const navItems = [
   { name: "Blog", href: "#blog" },
   { name: "Contact", href: "#contact", color: "#32CD32" },
 ];
+
+const socialLinks = [
+  { icon: Facebook, href: "#" },
+  { icon: Twitter, href: "#" },
+  { icon: Instagram, href: "#" },
+  { icon: Linkedin, href: "#" },
+]
+
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -89,10 +98,10 @@ export default function Header() {
 
               {/* Icons */}
               <IconButton sx={{ color: "text.primary" }}>
-                <Search fontSize="small" />
+                <FacebookOutlined fontSize="small" />
               </IconButton>
               <IconButton sx={{ color: "text.primary", position: "relative" }}>
-                <ShoppingCart fontSize="small" />
+                <InstagramIcon fontSize="small" />
                 <Box
                   sx={{
                     position: "absolute",
@@ -107,7 +116,7 @@ export default function Header() {
               </IconButton>
 
               {/* Order Now Button */}
-              <Button
+              {/* <Button
                 variant="contained"
                 sx={{
                   bgcolor: "#32CD32",
@@ -121,7 +130,7 @@ export default function Header() {
                 }}
               >
                 ORDER NOW
-              </Button>
+              </Button> */}
             </Box>
           )}
 

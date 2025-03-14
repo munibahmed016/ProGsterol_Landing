@@ -89,7 +89,6 @@ export default function HeroSection() {
                   ProGsterol
                 </Box>
               </Typography>
-
               <Typography variant="body1" sx={{ mb: 4, fontFamily: "Poppins, sans-serif", color: '#071A2B', fontSize: '1.2rem' }}>
                 Regulate Glucose Levels, Reverse Insulin Resistance & Take Control of Your Well-Being
               </Typography>

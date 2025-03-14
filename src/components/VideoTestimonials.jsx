@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { Box, Typography, Modal, IconButton, Fade } from "@mui/material"
+import { Box, Modal, IconButton, Fade } from "@mui/material"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Play, X } from "lucide-react"
 import Image from "next/image"
 
-export default function VideoTestimonial({ thumbnail, videoSrc, name, title, company, logo }) {
+export default function VideoTestimonial({ thumbnail, videoSrc, name }) {
     const [open, setOpen] = useState(false)
     const videoRef = useRef(null)
     const [ref, inView] = useInView({
@@ -46,6 +46,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name, title, com
                         borderRadius: "24px",
                         overflow: "hidden",
                         height: "100%",
+                        // pt:10,
                         display: "flex",
                         flexDirection: "column",
                         boxShadow: "0 4px 20px rgba(0,0,0,0.08)",
@@ -75,7 +76,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name, title, com
                                 src={thumbnail || "/placeholder.svg"}
                                 alt={`${name} video thumbnail`}
                                 fill
-                                style={{ objectFit: "cover" }}
+                                // style={{ objectFit: "cover" }}
                                 unoptimized={false}
                             />
                             <Box
@@ -101,24 +102,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name, title, com
                         </Box>
                     </Box>
 
-                    <Box sx={{ p: 3, flex: 1, display: "flex", flexDirection: "column" }}>
-                        <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
-                            {name}
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ mb: 2 }}>
-                            {title}, {company}
-                        </Typography>
-                        <Box
-                            sx={{
-                                mt: "auto",
-                                height: 30,
-                                width: 100,
-                                position: "relative",
-                            }}
-                        >
-                            <Image src={logo || "/placeholder.svg"} alt={`${company} logo`} fill style={{ objectFit: "contain" }} />
-                        </Box>
-                    </Box>
+                    {/*  */}
                 </Box>
             </motion.div>
 
@@ -166,7 +150,9 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name, title, com
                             component="video"
                             ref={videoRef}
                             controls
-                            width="100%"
+                            width="50%"
+                            height="50%"
+                            justifyContent="center"
                             sx={{
                                 borderRadius: 1,
                                 outline: "none",
