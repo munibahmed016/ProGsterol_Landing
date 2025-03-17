@@ -15,8 +15,8 @@ const benefits = [
   { title: "Diabetes Care", description: "Manufactured especially for Prediabetes & Type 2 Diabetes.", icon: "/diabetes.svg" },
   { title: "Dietary Supplement", description: "World's 1st NDI (New Dietary Ingredient) as synthetic peptide.", icon: "/fda.png" },
   { title: "Supports Heart Health", description: "Helps regulate blood pressure and improves cardiovascular function for a healthy heart.", icon: "/icons/heart.svg" },
-  { title: "Improves Digestion", description: "Enhances gut health and digestion by promoting beneficial gut bacteria.", icon: "/icons/digestion.svg" },
   { title: "Reduces Stress", description: "Lowers cortisol levels, reducing stress and promoting better sleep quality.", icon: "/icons/stress.svg" },
+  { title: "Improves Digestion", description: "Enhances gut health and digestion by promoting beneficial gut bacteria.", icon: "/icons/digestion.svg" },
 ];
 
 const textSequence = [

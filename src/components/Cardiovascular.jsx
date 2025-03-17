@@ -10,16 +10,20 @@ import Image from "next/image"
 // Features List (same as you provided)
 const features = [
     {
-        title: "Targets Insulin Resistance",
-        description: "Enhances glucose metabolism, allowing your body to burn fat more efficiently while preventing excess weight gain.",
+        title: "Regulates Cholesterol for Arterial Health",
+        description: "Helps lower harmful LDL cholesterol while boosting heart-protective HDL cholesterol.  ",
     },
     {
-        title: "Accelerates Fat Burning",
-        description: "Activates your body's natural fat-burning processes, helping you shed stored fat and achieve a leaner, healthier physique.",
+        title: "Promotes Healthy Blood Pressure",
+        description: "Aids in maintaining balanced blood pressure, reducing strain on the heart and vessels.",
     },
     {
-        title: "Maintains Energy Balance",
-        description: "Stabilizes blood sugar levels to prevent energy crashes and cravings while sustaining fat metabolism throughout the day.",
+        title: "Enhances Circulation & Blood Flow",
+        description: "Improves vascular flexibility and oxygen delivery for optimal heart performance.",
+    },
+    {
+        title: "Fights Inflammation & Free Radical Damage",
+        description: "Protects against oxidative stress, a key factor in heart disease and aging.",
     },
 ]
 
@@ -33,7 +37,7 @@ const floatAnimation = {
     },
 }
 
-export default function IRSection() {
+export default function CardiovascularSection() {
     const controls = useAnimation()
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -84,7 +88,7 @@ export default function IRSection() {
                                         color: "#071A2B",
                                     }}
                                 >
-                                    The Natural Way to Restore Liver Health with{" "}
+                                    Cardiovascular Support for Every Heartbeat with{" "}
                                     <Box component="span" sx={{ color: "#1BB3F7" }}>
                                         ProGsterol
                                     </Box>
@@ -100,7 +104,7 @@ export default function IRSection() {
                                         lineHeight: 1.7,
                                     }}
                                 >
-                                    Struggling with fatty liver? ProGsterol is designed to reduce excess fat buildup in the liver, enhance detoxification, and improve overall liver function. Clinically proven to support liver health, it works by addressing the root causes of liver fat accumulation and promoting long-term wellness.
+                                    A healthy heart means a healthier life. ProGsterol is specially formulated to support cardiovascular function by improving cholesterol levels, enhancing circulation, and reducing inflammation. With science-backed ingredients, it helps strengthen your heart and protect it from long-term damage.
                                 </Typography>
                             </motion.div>
 
@@ -155,7 +159,7 @@ export default function IRSection() {
                                         }}
                                     >
                                         <Image
-                                            src="/IR.png"
+                                            src="/Heart.jpg"
                                             alt="Weight Graph"
                                             width={350}
                                             height={300}
@@ -163,6 +167,25 @@ export default function IRSection() {
                                         />
                                     </Box>
                                 </motion.div>
+                                {/* <motion.div animate={floatAnimation} style={{ position: "absolute", top: "5%", right: "-25%" }}>
+                                    <Box
+                                        sx={{
+                                            width: 300,
+                                            backgroundColor: "white",
+                                            borderRadius: "12px",
+                                            boxShadow: "0 15px 30px rgba(0,0,0,0.1)",
+                                            overflow: "hidden",
+                                        }}
+                                    >
+                                        <Image
+                                            src="/graph.png"
+                                            alt="Progress Graph"
+                                            width={300}
+                                            height={280}
+                                            style={{ width: "100%", height: "auto" }}
+                                        />
+                                    </Box>
+                                </motion.div> */}
                             </Box>
                         </Box>
                     </Grid>
