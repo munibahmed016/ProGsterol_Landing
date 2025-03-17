@@ -18,6 +18,8 @@ import CTAForms from "@/components/CTAForms"
 import ProductInterestCTA from "@/components/ProductInterestCTA"
 import ContactForm from "@/components/ContactForm"
 import HealthExpertCTA from "@/components/HealthExpertCTA"
+import FattyLiver from "@/components/FattyLiver"
+import IRSection from "@/components/IR"
 
 export default function Home() {
   return (
@@ -34,10 +36,12 @@ export default function Home() {
       <ProductInterestCTA/>
       {/* <ProductShowcase /> */}
       <FeaturesSection/>
+      <FattyLiver/>
+      <HealthExpertCTA/>
+      <IRSection/>
       {/* <HowItWorks /> */}
       {/* <RecommendedByDoctors /> */}
       {/* <CustomerTestimonials /> */}
-      <HealthExpertCTA/>
       <TestimonialsSection />
       <ContactForm/>
       {/* <FeatureShowcase />  */}

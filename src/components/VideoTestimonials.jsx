@@ -45,7 +45,7 @@ export default function VideoTestimonial({ thumbnail, videoSrc, name }) {
                         bgcolor: "#FFFFFF",
                         borderRadius: "24px",
                         overflow: "hidden",
-                        height: "100%",
+                        height: "115%",
                         // pt:10,
                         display: "flex",
                         flexDirection: "column",
