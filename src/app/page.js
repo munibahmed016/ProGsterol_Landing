@@ -20,7 +20,8 @@ import ContactForm from "@/components/ContactForm"
 import HealthExpertCTA from "@/components/HealthExpertCTA"
 import FattyLiver from "@/components/FattyLiver"
 import CardiovascularSection from "@/components/Cardiovascular"
-
+import PeptideSection from "@/components/peptideSection"
+import ExpertTestimonials from "@/components/ExpertTestimonials"
 export default function Home() {
   return (
     <Box
@@ -36,6 +37,7 @@ export default function Home() {
       <ProductInterestCTA/>
       {/* <ProductShowcase /> */}
       <FeaturesSection/>
+      <PeptideSection/>
       <FattyLiver/>
       <HealthExpertCTA/>
       <CardiovascularSection/>
@@ -43,6 +45,7 @@ export default function Home() {
       {/* <RecommendedByDoctors /> */}
       {/* <CustomerTestimonials /> */}
       <TestimonialsSection />
+      <ExpertTestimonials/>
       <ContactForm/>
       {/* <FeatureShowcase />  */}
       <PricingSection />
