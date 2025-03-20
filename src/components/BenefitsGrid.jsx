@@ -6,62 +6,62 @@ import Image from "next/image"
 
 const benefits = [
   {
-    icon: "/weight.png", 
+    icon: "/loss.png", 
     title: "Lose Weight",
     subtitle: "Efficiently, Naturally.",
   },
   {
-    icon: "/icons/insulin.svg", 
+    icon: "/ir.png", 
     title: "Reverse Insulin",
     subtitle: "Resistance",
   },
   {
-    icon: "/icons/diabetes.svg", 
+    icon: "/type2.png", 
     title: "Manage",
     subtitle: "Type 2 Diabetes",
   },
   {
-    icon: "/icons/pcos.svg", 
+    icon: "/pcos.png", 
     title: "Improve",
     subtitle: "PCOS",
   },
   {
-    icon: "/icons/cholesterol.svg", 
+    icon: "/ldl.png", 
     title: "Lower High LDL",
     subtitle: "Cholesterol Levels",
   },
   {
-    icon: "/icons/triglycerides.svg", 
+    icon: "/lht.png", 
     title: "Lower High",
     subtitle: "Triglycerides",
   },
   {
-    icon: "/icons/heart.svg", 
+    icon: "/heart.png", 
     title: "Support",
     subtitle: "Heart Health",
   },
   {
-    icon: "/icons/liver.svg", 
+    icon: "/improve.png", 
     title: "Improve",
     subtitle: "Liver Health",
   },
   {
-    icon: "/icons/safety.svg", 
+    icon: "/100.png", 
     title: "100% Safe",
     subtitle: "No Side Effects",
   },
   {
-    icon: "/icons/peptides.svg", 
+    icon: "/pep.png", 
     title: "Powered by",
     subtitle: "Peptides",
   },
   {
-    icon: "/icons/fda.svg", 
+    icon: "/wfda.png", 
     title: "World's 1st FDA-",
     subtitle: "Approved NDI*",
   },
   {
-    icon: "/icons/clinical.svg", 
+    icon: "/clinical.png", 
     title: "Clinically Tested",
     subtitle: "and Proven",
   },

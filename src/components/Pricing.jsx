@@ -11,7 +11,7 @@ import { useRef } from "react"
 const plans = [
   {
     title: "Small Box",
-    price: "Rs. 3500",
+    price: "Rs. 4500",
     period: "",
     gradient: "linear-gradient(135deg, #FF8042 0%, #FF5C7D 100%)",
     buttonGradient: "linear-gradient(to right, #FF8042, #FF5C7D)",
@@ -38,7 +38,7 @@ const plans = [
   },
   {
     title: "Mega Box",
-    price: "Rs. 10500",
+    price: "Rs. 13500",
     period: "",
     gradient: "linear-gradient(135deg, #B44BFF 0%, #8E13FF 100%)",
     buttonGradient: "linear-gradient(to right, #B44BFF, #8E13FF)",
