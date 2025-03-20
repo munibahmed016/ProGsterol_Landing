@@ -8,21 +8,21 @@ import { useEffect } from "react"
 const steps = [
   {
     number: "01",
-    title: "",
-    description: "",
-    image: "/placeholder.svg?height=200&width=200",
+    title: "Just Pour",
+    description: "Just Pour, Stir and Sip! It’s that simple.",
+    image: "/stir.png",
   },
   {
     number: "02",
-    title: "",
-    description: "",
-    image: "/placeholder.svg?height=200&width=200",
+    title: "Take one stick",
+    description: "Take one stick mixed in any drink with breakfast.",
+    image: "/break.png",
   },
   {
     number: "03",
-    title: "",
-    description: "  ",
-    image: "/placeholder.svg?height=200&width=200",
+    title: "For weight loss",
+    description: " For weight loss, take twice a day before meals. ",
+    image: "/loss.png",
   },
 ]
 
@@ -70,19 +70,15 @@ export default function HowItWorks() {
               mb: 1,
             }}
           >
-            How it works -{" "}
-            <Box component="span" sx={{ color: "#6366f1" }}>
-              3 easy steps
-            </Box>
+            How it works
+            
           </Typography>
 
-          <Typography variant="body1" align="center" color="text.secondary" sx={{ mb: 8, maxWidth: 600, mx: "auto" }}>
-            Lorem ipsum is simply dummy text of the printing and typese tting indus orem Ipsum has beenthe standard
-            dummy.
+          <Typography variant="body1" align="center" color="#071a2b" sx={{ mb: 8, maxWidth: 600, mx: "auto" }}>
+            Transform your health and transform your life with ProGsterol
           </Typography>
 
           <Box sx={{ position: "relative" }}>
-            {/* Timeline line */}
             <Box
               sx={{
                 position: "absolute",
@@ -131,7 +127,7 @@ export default function HowItWorks() {
                       <Box
                         sx={{
                           position: "absolute",
-                          left: { xs: "0", md: index % 2 ? "auto" : "-20px" },
+                          left: { xs: "0", md: index % 2 ? "auto" : "-50px" },
                           right: { xs: "auto", md: index % 2 ? "-20px" : "auto" },
                           top: "0",
                           width: "40px",
@@ -171,9 +167,9 @@ export default function HowItWorks() {
                         alt={step.title}
                         sx={{
                           maxWidth: "100%",
-                          height: "auto",
-                          borderRadius: "20px",
-                          boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+                          // height: "auto",
+                          // borderRadius: "20px",
+                          // boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                         }}
                       />
                     </Box>

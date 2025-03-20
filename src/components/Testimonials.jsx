@@ -1,6 +1,6 @@
 "use client"
 
-import { Box, Container } from "@mui/material"
+import { Box, Container, Typography } from "@mui/material"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import VideoTestimonialCard from "./VideoTestimonialCard"

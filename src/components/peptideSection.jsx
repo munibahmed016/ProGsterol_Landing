@@ -6,14 +6,16 @@ import { Ban } from "lucide-react"
 
 export default function PeptidePowerSection() {
   return (
-    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 } }}>
+    <Container maxWidth="xl" sx={{ py: { xs: 6, md: 8 }, 
+      bgcolor: "#FFFFFF"
+    }}>
       <Box
         sx={{
           position: "relative",
-          borderRadius: "24px",
+          borderRadius: "35px",
           overflow: "hidden",
           background: "linear-gradient(180deg, #E8F5FE 0%, #F8FCFF 100%)",
-          boxShadow: "0 8px 20px rgba(0,0,0,0.05)",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.05)",
           pb: 4,
         }}
       >

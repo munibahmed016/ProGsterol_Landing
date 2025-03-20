@@ -22,6 +22,8 @@ import FattyLiver from "@/components/FattyLiver"
 import CardiovascularSection from "@/components/Cardiovascular"
 import PeptideSection from "@/components/peptideSection"
 import ExpertTestimonials from "@/components/ExpertTestimonials"
+import HowItWorks from "@/components/HowItWorks"
+import SubscriptionCTA from "@/components/SubscriptionCTA"
 export default function Home() {
   return (
     <Box
@@ -41,7 +43,8 @@ export default function Home() {
       <FattyLiver/>
       <HealthExpertCTA/>
       <CardiovascularSection/>
-      {/* <HowItWorks /> */}
+      <HowItWorks />
+      <SubscriptionCTA/>
       {/* <RecommendedByDoctors /> */}
       {/* <CustomerTestimonials /> */}
       <TestimonialsSection />

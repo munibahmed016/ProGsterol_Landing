@@ -94,8 +94,8 @@ export default function HeroSection() {
               </Typography>
               <Box sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" }, gap: 2, mb: 3 }}>
                 <Button
-                  component={Link} // Use Next.js Link
-                  href="https://3zbio.pk/product/progsterol-new-dietary-supplement-to-support-healthy-glucose-level/" // Anchor link
+                  component={Link}
+                  href="https://3zbio.pk/product/progsterol-new-dietary-supplement-to-support-healthy-glucose-level/" 
                   variant="outlined"
                   startIcon={<LanguageIcon />}
                   sx={{ width: "100%" }}

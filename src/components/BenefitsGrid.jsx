@@ -4,71 +4,70 @@ import { Box, Container, Typography, Grid } from "@mui/material"
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-// Benefit data with icons and text
 const benefits = [
   {
-    icon: "/icons/weight-loss.svg", // Replace with actual icon path
+    icon: "/weight.png", 
     title: "Lose Weight",
     subtitle: "Efficiently, Naturally.",
   },
   {
-    icon: "/icons/insulin.svg", // Replace with actual icon path
+    icon: "/icons/insulin.svg", 
     title: "Reverse Insulin",
     subtitle: "Resistance",
   },
   {
-    icon: "/icons/diabetes.svg", // Replace with actual icon path
+    icon: "/icons/diabetes.svg", 
     title: "Manage",
     subtitle: "Type 2 Diabetes",
   },
   {
-    icon: "/icons/pcos.svg", // Replace with actual icon path
+    icon: "/icons/pcos.svg", 
     title: "Improve",
     subtitle: "PCOS",
   },
   {
-    icon: "/icons/cholesterol.svg", // Replace with actual icon path
+    icon: "/icons/cholesterol.svg", 
     title: "Lower High LDL",
     subtitle: "Cholesterol Levels",
   },
   {
-    icon: "/icons/triglycerides.svg", // Replace with actual icon path
+    icon: "/icons/triglycerides.svg", 
     title: "Lower High",
     subtitle: "Triglycerides",
   },
   {
-    icon: "/icons/heart.svg", // Replace with actual icon path
+    icon: "/icons/heart.svg", 
     title: "Support",
     subtitle: "Heart Health",
   },
   {
-    icon: "/icons/liver.svg", // Replace with actual icon path
+    icon: "/icons/liver.svg", 
     title: "Improve",
     subtitle: "Liver Health",
   },
   {
-    icon: "/icons/safety.svg", // Replace with actual icon path
+    icon: "/icons/safety.svg", 
     title: "100% Safe",
     subtitle: "No Side Effects",
   },
   {
-    icon: "/icons/peptides.svg", // Replace with actual icon path
+    icon: "/icons/peptides.svg", 
     title: "Powered by",
     subtitle: "Peptides",
   },
   {
-    icon: "/icons/fda.svg", // Replace with actual icon path
+    icon: "/icons/fda.svg", 
     title: "World's 1st FDA-",
     subtitle: "Approved NDI*",
   },
   {
-    icon: "/icons/clinical.svg", // Replace with actual icon path
+    icon: "/icons/clinical.svg", 
     title: "Clinically Tested",
     subtitle: "and Proven",
   },
 ]
 
-// Placeholder SVG icons for demo purposes
+
 const placeholderIcons = {
   "weight-loss": `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="#FFD580" stroke="#FF9F43" strokeWidth="5"/><path d="M50 30 L50 70 M40 40 L60 60 M40 60 L60 40" stroke="#FF6B6B" strokeWidth="5" strokeLinecap="round"/></svg>`,
   insulin: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="30" fill="#A5F1E9" stroke="#7DDBD3" strokeWidth="5"/><rect x="40" y="40" width="20" height="20" fill="#FFBB64" rx="2"/></svg>`,
@@ -84,7 +83,7 @@ const placeholderIcons = {
   clinical: `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="35" y="30" width="10" height="40" rx="2" fill="#F1F1F1" stroke="#DDDDDD" strokeWidth="2"/><rect x="50" y="30" width="10" height="40" rx="2" fill="#F1F1F1" stroke="#DDDDDD" strokeWidth="2"/><rect x="65" y="30" width="10" height="40" rx="2" fill="#F1F1F1" stroke="#DDDDDD" strokeWidth="2"/><rect x="35" y="50" width="10" height="20" rx="0" fill="#FF9AA2"/><rect x="50" y="40" width="10" height="30" rx="0" fill="#FF9AA2"/><rect x="65" y="45" width="10" height="25" rx="0" fill="#FF9AA2"/></svg>`,
 }
 
-// Benefit card component
+
 const BenefitCard = ({ icon, title, subtitle, index }) => {
   return (
     <motion.div
@@ -119,7 +118,6 @@ const BenefitCard = ({ icon, title, subtitle, index }) => {
             position: "relative",
           }}
         >
-          {/* Use actual image if available, otherwise use placeholder SVG */}
           {icon.startsWith("/") ? (
             <Image src={icon || "/placeholder.svg"} alt={title} fill style={{ objectFit: "contain" }} />
           ) : (

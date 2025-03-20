@@ -158,16 +158,23 @@ export default function ExpertTestimonials() {
                   flexDirection: { xs: "column", md: "row" },
                   alignItems: "center",
                   gap: { xs: 4, md: 6 },
+                  borderRadius: 4,
+                  overflow: "hidden",
                 }}
               >
-                {/* Expert image and info */}
+                {/* Expert image and info with background */}
                 <Box
                   sx={{
                     position: "relative",
-                    width: { xs: 200, md: 240 },
+                    width: { xs: "100%", md: "35%" },
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
+                    bgcolor: "#E0F7FA",
+                    py: 5,
+                    px: 3,
+                    borderRadius: { xs: 4, md: "16px 0 0 16px" },
+                    height: { md: "100%" },
                   }}
                 >
                   <Box
@@ -179,6 +186,7 @@ export default function ExpertTestimonials() {
                       position: "relative",
                       mb: 2,
                       bgcolor: "#E0F7FA",
+                      border: "4px solid white",
                     }}
                   >
                     <Image
@@ -193,9 +201,10 @@ export default function ExpertTestimonials() {
                   <Box
                     sx={{
                       position: "absolute",
-                      right: -30,
+                      right: -20,
                       top: "40%",
                       display: { xs: "none", md: "block" },
+                      zIndex: 1,
                     }}
                   >
                     <svg width="40" height="30" viewBox="0 0 40 30" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -248,7 +257,7 @@ export default function ExpertTestimonials() {
                 <Box
                   sx={{
                     bgcolor: "#E0F7FA",
-                    borderRadius: 4,
+                    borderRadius: { xs: 4, md: "0 16px 16px 0" },
                     p: 4,
                     position: "relative",
                     flex: 1,
