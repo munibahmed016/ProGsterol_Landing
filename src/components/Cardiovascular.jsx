@@ -7,7 +7,6 @@ import { useInView } from "react-intersection-observer"
 import { CheckCircle } from "lucide-react"
 import Image from "next/image"
 
-// Features List (same as you provided)
 const features = [
     {
         title: "Regulates Cholesterol for Arterial Health",
@@ -27,9 +26,8 @@ const features = [
     },
 ]
 
-// Floating animation (up and down)
 const floatAnimation = {
-    y: [0, -15, 0], // Moves up 15px and back down
+    y: [0, -15, 0],
     transition: {
         duration: 5,
         repeat: Infinity,

@@ -2,7 +2,6 @@
 
 import { Box, Typography } from "@mui/material";
 
-// Example badges - replace with your actual images & names
 const badges = [
   { logo: "/1-1.png", name: "" },
   { logo: "/2-1.webp", name: "" },
@@ -32,7 +31,7 @@ export default function CertificatesSection() {
           width: "100%",
           textAlign: "center",
           mb: 3,
-          fontSize: { xs: "1.2rem", md: "1.5rem" }, // Adjusted for mobile
+          fontSize: { xs: "1.2rem", md: "1.5rem" }, 
           color: "#071A2B",
         }}
       >
@@ -44,15 +43,15 @@ export default function CertificatesSection() {
         sx={{
           display: "flex",
           flexDirection: "row",
-          flexWrap: { xs: "nowrap", md: "wrap" }, // Allow scrolling on mobile, wrap on desktop
+          flexWrap: { xs: "nowrap", md: "nowrap" }, 
           overflowX: { xs: "auto", md: "unset" },
           gap: 3,
           width: "100%",
           maxWidth: "900px",
-          justifyContent: { xs: "flex-start", md: "center" }, // Start on mobile, center on desktop
+          justifyContent: { xs: "flex-start", md: "center" }, 
           px: { xs: 2, md: 0 },
-          scrollbarWidth: "none", // Hide scrollbar for better aesthetics
-          "&::-webkit-scrollbar": { display: "none" }, // Hide scrollbar on WebKit browsers
+          scrollbarWidth: "none", 
+          "&::-webkit-scrollbar": { display: "none" }, 
         }}
       >
         {badges.map((badge, index) => (
@@ -63,7 +62,7 @@ export default function CertificatesSection() {
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              minWidth: { xs: "70px", sm: "90px", md: "110px" }, // Adjust badge size based on screen
+              minWidth: { xs: "70px", sm: "90px", md: "110px" }, 
             }}
           >
             {/* Circular Badge Container */}

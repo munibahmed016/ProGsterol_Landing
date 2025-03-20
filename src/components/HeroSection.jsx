@@ -114,7 +114,7 @@ export default function HeroSection() {
               </Typography>
 
               {/* CTA Buttons */}
-              <Box
+              {/* <Box
                 sx={{
                   display: "flex",
                   flexDirection: { xs: "column", sm: "row" },
@@ -163,7 +163,7 @@ export default function HeroSection() {
                 >
                   Watch Video
                 </Button>
-              </Box>
+              </Box> */}
 
               <Typography
                 variant="body1"
