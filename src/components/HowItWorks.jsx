@@ -22,7 +22,7 @@ const steps = [
     number: "03",
     title: "For weight loss",
     description: " For weight loss, take twice a day before meals. ",
-    image: "/loss.png",
+    image: "/hloss.png",
   },
 ]
 

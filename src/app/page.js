@@ -35,11 +35,11 @@ export default function Home() {
     >
       <Header />
       <HeroSection />
+      <PeptideSection/>
       <TrustedCompanies />
       <ProductInterestCTA/>
       {/* <ProductShowcase /> */}
       <FeaturesSection/>
-      <PeptideSection/>
       <FattyLiver/>
       <HealthExpertCTA/>
       <CardiovascularSection/>
